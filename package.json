@@ -1,0 +1,50 @@
+{
+  "name": "webapps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint **/*.js --no-error-on-unmatched-pattern --ignore-path .gitignore",
+    "lint:fix": "npx eslint **/*.js --fix --ignore-path .gitignore",
+    "stylelint": "npx stylelint **/*.css --ignore-path .gitignore",
+    "stylelint:fix": "npx stylelint **/*.css --fix --ignore-path .gitignore",
+    "format": "npx prettier --check .",
+    "format:fix": "npx prettier --write .",
+    "prepare": "npx husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilaHalko/webApps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MilaHalko/webApps/issues"
+  },
+  "lint-staged": {
+    "*.{js,ts,html}": [
+      "prettier --check ."
+    ],
+    "*.{js,ts}": [
+      "eslint **/*.js"
+    ],
+    "*.css": [
+      "stylelint **/*.css"
+    ],
+    "*.js": "eslint --cache --fix"
+  },
+  "homepage": "https://github.com/MilaHalko/webApps#readme",
+  "devDependencies": {
+    "@nodeart/eslint-plugin": "^1.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-sonarjs": "^0.10.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  }
+}

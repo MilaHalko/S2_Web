@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:sonarjs/recommended",
+    "plugin:@nodeart/react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 13
+  },
+  "rules": {},
+  "plugins": ["sonarjs", "@nodeart"]
+}
