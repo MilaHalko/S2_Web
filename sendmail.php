@@ -32,7 +32,7 @@
     $mail->IsHTML(true);
 
     $mail->setFrom('host@milkadeluxe.fun');
-    $mail->addAddress($_POST['email']);
+    $mail->addAddress('milagalko1@gmail.com');
     $mail->Subject = 'Привет, это проверочное письмо';
 
     $body = '<h1>Отправка письма из Лабы №2</h1>';
