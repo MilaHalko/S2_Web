@@ -9,7 +9,7 @@
     "plugin:@nodeart/react"
   ],
   "parserOptions": {
-    "ecmaVersion": 13
+    "ecmaVersion": "latest"
   },
   "rules": {},
   "plugins": ["sonarjs", "@nodeart"]
