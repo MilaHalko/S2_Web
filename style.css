@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
   --bright-background-color: #ffcbcb;
   --dark-background-color: #7c0e20;
   --bright-text-color: #e6e6e6;
@@ -28,7 +29,7 @@ header {
 
 @media screen and (max-width: 1000px) {
   header {
-      flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
 }
 
@@ -75,6 +76,19 @@ nav {
   color: var(--dark-background-color);
 }
 
+.swipe-cta {
+  display: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.swipe-cta span {
+  font-size: 2rem;
+}
+
 .burger {
   cursor: pointer;
   display: none;
@@ -106,7 +120,7 @@ nav {
 
 @media screen and (max-width: 1000px) {
   .burger {
-      display: flex;
+    display: flex;
   }
 }
 
@@ -127,29 +141,29 @@ nav {
 
 @media screen and (max-width: 1000px) {
   .burger-button:checked ~ .burger {
-      position: fixed;
-      right: 0;
+    position: fixed;
+    right: 0;
   }
 
   .burger-button:checked ~ .backdrop {
-      display: block;
+    display: block;
   }
 
   .burger-button:checked ~ nav {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 
   .burger-button:checked ~ nav .links {
-      flex-direction: column;
-      display: block;
+    flex-direction: column;
+    display: block;
   }
 
   .burger-button:checked ~ .burger span:nth-of-type(1) {
-      transform: rotateZ(15deg) scaleX(1.03);
+    transform: rotateZ(15deg) scaleX(1.03);
   }
 
   .burger-button:checked ~ .burger span:nth-of-type(2) {
-      transform: rotateZ(-15deg) scaleX(1.03);
+    transform: rotateZ(-15deg) scaleX(1.03);
   }
 }
 
@@ -163,6 +177,7 @@ nav {
   margin: 0 15rem;
   position: relative;
 }
+
 .slider-outer .slider-button {
   font-size: 2rem;
   font-weight: bold;
@@ -175,6 +190,7 @@ nav {
   width: 2.5rem;
   z-index: 0;
 }
+
 .slider-outer .slider-button .slider-button-label {
   display: inline-block;
   cursor: pointer;
@@ -206,21 +222,21 @@ nav {
 
 @media screen and (max-width: 1600px) {
   .slider-outer {
-      margin-left: 15rem;
-      margin-right: 15rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
   }
 }
 
 @media screen and (max-width: 1300px) {
   .slider-outer {
-      margin-left: 10rem;
-      margin-right: 10rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .slider-outer {
-      margin: 0;
+    margin: 0;
   }
 }
 
@@ -245,6 +261,17 @@ nav {
   margin: 0;
 }
 
+.slider {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 1s;
+  width: 300%;
+}
+
 .slide1:checked ~ .slider-visible .slider {
   transform: translateX(0);
 }
@@ -257,9 +284,7 @@ nav {
   z-index: 1;
 }
 
-.slide1:checked
-  ~ .slider-button-right
-  .slider-button-label-right[for="slide2"] {
+.slide1:checked ~ .slider-button-right .slider-button-label-right[for="slide2"] {
   z-index: 1;
 }
 
@@ -275,9 +300,7 @@ nav {
   z-index: 1;
 }
 
-.slide2:checked
-  ~ .slider-button-right
-  .slider-button-label-right[for="slide3"] {
+.slide2:checked ~ .slider-button-right .slider-button-label-right[for="slide3"] {
   z-index: 1;
 }
 
@@ -293,23 +316,8 @@ nav {
   z-index: 1;
 }
 
-.slide3:checked
-  ~ .slider-button-right
-  .slider-button-label-right[for="slide1"] {
+.slide3:checked ~ .slider-button-right .slider-button-label-right[for="slide1"] {
   z-index: 1;
-}
-
-.swipe-cta {
-  display: none;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: auto;
-  text-align: center;
-  width: 70%;
-}
-
-.swipe-cta span {
-  font-size: 2rem;
 }
 
 .slider-visible {
@@ -318,23 +326,13 @@ nav {
   position: relative;
 }
 
-.slider {
-  bottom: 0;
-  display: flex;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: transform 1s;
-  width: 300%;
-}
-
 .slider .slide {
   flex: 1 1;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
+
 .slider .slide:nth-of-type(1) {
   background-image: url("./assets/first.jpg");
 }

@@ -1,13 +1,13 @@
 {
   "name": "webapps",
   "version": "1.0.0",
-  "description": "",
+  "description": "webApps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint **/*.js --no-error-on-unmatched-pattern --ignore-path .gitignore",
     "lint:fix": "npx eslint **/*.js --fix --ignore-path .gitignore",
-    "stylelint": "npx stylelint **/*.css --ignore-path .gitignore",
+    "stylelint": "stylelint **/*.css --ignore-path .gitignore",
     "stylelint:fix": "npx stylelint **/*.css --fix --ignore-path .gitignore",
     "format": "npx prettier --check .",
     "format:fix": "npx prettier --write .",
@@ -40,11 +40,17 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-sonarjs": "^0.10.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
+    "postcss": "^8.4.5",
+    "postcss-scss": "^4.0.2",
     "prettier": "2.4.1",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-declaration-use-variable": "^1.7.3"
   }
 }
