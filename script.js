@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form');
   form.addEventListener('submit', formSend);
-
+  const modal = document.getElementById('myModal');
+  const span = document.getElementsByClassName('close')[0];
+  const errP = document.getElementById('errMessage');
   async function formSend(e) {
     e.preventDefault();
     const error = formValidate();
@@ -14,18 +16,38 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('sendmail.php', {
         method: 'POST',
         body: formData,
+      }).catch(() => {
+        form.classList.remove('_sending');
+        errP.innerHTML =
+          'Ошибка отправления сообщения, отсутствует соединение с интернетом!';
+        modal.style.display = 'block';
+
+        span.onclick = function () {
+          modal.style.display = 'none';
+        };
       });
       if (response.ok) {
-        const result = await response.json();
-        alert(result.message);
+        await response.json();
+
         form.reset();
         form.classList.remove('_sending');
       } else {
-        alert('Oops! Something went wrong!');
+        errP.innerHTML = 'Сообщение не было отправленно!';
+        modal.style.display = 'block';
+
+        span.onclick = function () {
+          modal.style.display = 'none';
+        };
+
         form.classList.remove('_sending');
       }
     } else {
-      alert('Заполните поля выделенные красным!');
+      errP.innerHTML = 'Заполните поля выделенные красным!';
+      modal.style.display = 'block';
+
+      span.onclick = function () {
+        modal.style.display = 'none';
+      };
     }
   }
 
