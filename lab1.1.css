@@ -1,0 +1,116 @@
+/* BASICS */
+*{
+    font-family: 'Playfair Display';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* SAME COLORS */
+header, footer {background: rgb(36, 152, 160);}
+.center__top, .center__bottom, body {background: rgb(152, 211, 226);}
+nav, .center__right {background: rgb(255, 240, 211);}
+.center__main, .top-title, .bottom-title {background: rgb(243, 243, 243);}
+
+/* HEADER_FOOTER */
+header, footer {
+    justify-content: space-between;
+}
+header div, footer div {    
+    display: flex;
+    align-items: center;
+}
+header div q {
+    font-style: italic;
+    quotes: '\00AB' '\00BB' '\201E' '\201C';
+    text-align: center;
+}
+header q, footer p {
+    color: rgb(152, 211, 226);
+    margin: 20px;
+}
+
+/*TITLES*/
+.top-title, .bottom-title {
+    border: 5px solid rgb(25, 124, 131);
+    border-radius: 15px;
+    box-shadow: -8px 0 8px rgb(8, 67, 71);
+    padding: 5px;
+}
+.top-title h1, .bottom-title h2 {
+    font-size: 30px;
+    line-height: 30px;
+}
+
+/* Center__Main */
+.center__main {
+    padding: 30px 30px 60px 30px;
+    position: relative;
+    border: 3px solid rgb(241, 48, 80);
+    border-radius: 15px;
+}
+.center__main p::first-letter {
+    padding-left: 15px;
+    font-size: 30px;
+}
+.center__main span {
+    color: rgb(241, 48, 80);
+}
+.center__main a {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    margin: 0 0 0 -30px;
+    text-align: center;
+    color: rgb(25, 124, 131);
+    text-decoration: underline;
+    text-transform: lowercase;
+    font-style: italic;
+}
+.center__main a:hover {
+    color: lightseagreen;
+}
+
+/* Center sides */
+.center__top, .center__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center__top p, .center__bottom p{
+    text-transform: uppercase;
+    font-size: 40px;
+    color: rgb(25, 124, 131);
+    opacity: 0.5;
+    line-height: 40px;
+}
+.center__right {
+    background: #0E1A2A url(./images/girl.jpeg) 30% 50% no-repeat;
+}
+nav {
+    border-radius: 20px;
+}
+nav li {
+    padding: 0 0 0 15px;
+    height: 50px;
+    color: rgb(190, 116, 128);
+}
+nav li a {
+    color: rgb(241, 48, 80);
+}
+nav li a:hover {
+    font-size: 20px;
+}
+nav li::before {
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(241, 48, 80);
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    box-shadow: 0 3px 2px rgb(121, 103, 72);
+}
+nav li:nth-child(1)::before {
+    background-color: rgb(190, 116, 128);
+}

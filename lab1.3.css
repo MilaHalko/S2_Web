@@ -1,0 +1,147 @@
+/* BASICS */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* SAME COLORS */
+header, footer {background: rgb(68, 68, 68);}
+.center__top, .center__bottom, body {background: black;}
+nav, .center__right {background: rgb(255, 255, 255);}
+.center__main, .top-title, .bottom-title {background: rgb(201, 201, 201);}
+
+/* HEADER_FOOTER */
+header {
+    background: url(./images/b&w_forest.jpg) center 100%/cover no-repeat;
+    justify-content: right;
+}
+footer {
+    display: flex;
+}
+footer p {
+    flex: 4;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    opacity: 0.2;
+    text-align: justify;
+    font-size: 14px;
+}
+
+/*TITLES*/
+.top-title h1, .bottom-title h2 {
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.top-title h1 {
+    text-align: center;
+}
+.bottom-title h2 {
+    text-align: right;
+    padding-right: 15px;
+}
+.top-title, .bottom-title, .center__main {
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0px 0 8px rgb(255, 255, 255);
+}
+.top-title:hover, .bottom-title:hover, .center__main:hover {
+    box-shadow: 0px 0 20px rgb(255, 255, 255);
+}
+
+/* Center__Main */
+.center__main {
+    margin: 0 15px;
+    padding: 20px;
+}
+.center__main p {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+.center__main:hover {
+    background: #ff9932; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ff9932 0%, #30ff3e 50%, #89c8ff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ff9932 0%,#30ff3e 50%,#89c8ff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ff9932 0%,#30ff3e 50%,#89c8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9932', endColorstr='#89c8ff',GradientType=0 ); /* IE6-9 */
+}
+
+/* Center sides */
+.center__top, .center__bottom {
+    display: flex;
+    justify-content: center;
+}
+.center__top p, .center__bottom p{
+    display: flex;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 25px;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+}
+.center__right {
+    border-radius: 20px;
+    margin: 0 0 20px 0;
+}
+.center__right a {
+    color: red;
+    display: block;
+    padding: 20px 0 0 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+}
+.center__right h2:hover {
+    text-decoration: underline;
+}
+.center__right ul {
+    margin: 30px;
+    text-align: right;
+}
+.center__right li {
+    line-height: 25px;
+    font-style: italic;
+} 
+.center__right li:nth-child(2) {padding-right: 10%;}
+.center__right li:nth-child(3) {padding-right: 20%;}
+.center__right li:nth-child(4) {padding-right: 30%;}
+.center__right li:nth-child(5) {padding-right: 40%;}
+.center__right li:nth-child(6) {padding-right: 50%;}
+.center__right li:nth-child(7) {padding-right: 60%;}
+.center__right li:nth-child(8) {padding-right: 70%;}
+.center__right li:nth-child(9) {padding-right: 80%;}
+.center__right li:nth-child(10) {padding-right: 90%;}
+nav {
+    border-radius: 20px;
+    padding: 15px;
+}
+nav li {
+    line-height: 30px;
+    color: rgb(168, 168, 168);
+}
+nav li a {
+    color: rgb(241, 48, 80);
+}
+nav li a:hover {
+    font-size: 20px;
+}
+nav li::before {
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(241, 48, 80);
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    box-shadow: 0 3px 2px rgb(121, 103, 72);
+}
+nav li:nth-child(3)::before {
+    background-color: rgb(168, 168, 168);
+}

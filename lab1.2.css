@@ -1,0 +1,141 @@
+/* BASICS */
+*{
+    font-family: 'Izax';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgb(38, 0, 126);
+}
+
+/* SAME COLORS */
+header, footer {background: rgb(15, 72, 156);}
+.center__top, .center__bottom, body {background: rgb(10, 147, 211);}
+nav, .center__right {background: rgb(212, 212, 212);}
+.center__main, .top-title, .bottom-title {background: rgb(243, 243, 243);}
+
+/* HEADER_FOOTER */
+
+header {
+    z-index: 3;
+    box-shadow: 0 5px 15px rgb(27, 44, 99);
+    border-bottom: 3px solid rgb(38, 0, 126);
+}
+header div > .top-title {
+    margin: 0 0 0 30px;
+}
+.h2 {
+    width: 300px;
+}
+.h2, aside h2 {
+    border: 10px double rgb(38, 0, 126);
+    margin: 15px;
+    padding: 10px;
+}
+header h2, aside h2 {
+    color: white;
+    font-size: 40px;
+    text-shadow: 0 5px 5px rgb(38, 0, 126);
+    text-align: center;
+    line-height: 40px;
+}
+header p {
+    color: white;
+    margin: 50px 30px;
+    font-size: 25px;
+    opacity: 0.5;
+    line-height: 30px;
+}
+footer{
+    border-top: 3px solid rgb(38, 0, 126);
+    background: url(./images/css_back.jpg) 100% no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+}
+
+/*TITLES*/
+.top-title, .bottom-title {
+    border: 5px solid rgb(38, 0, 126);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgb(27, 44, 99);
+    padding: 5px;
+}
+.top-title h1, .bottom-title h2 {
+    width: 100%;
+    align-self: center;
+    font-size: 30px;
+}
+.top-title h1 {
+    text-align: center;
+}
+.bottom-title h2 {
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Center__Main */
+.center__main {
+    border: 5px solid rgb(38, 0, 126);
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center sides */
+.center__top, .center__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.center__top p, .center__bottom p{
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 45px;
+    color: white;
+    opacity: 0.5;
+}
+.center__right ol {
+    margin: 10px 40px;
+}
+.center__right li {
+    font-size: 20px;
+    padding: 0 0 5px 0;
+}
+nav {
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgb(27, 44, 99);
+    position: relative;
+    z-index: 2;
+}
+nav li {
+    padding: 0 15px;
+    line-height: 30px;
+    color: rgb(88, 70, 133);
+    font-size: 25px;
+}
+nav li a {
+    color: rgb(38, 0, 126);
+    font-size: 25px;
+}
+nav li a:hover {
+    font-size: 30px;
+}
+nav li::before {
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(38, 0, 126);
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    box-shadow: 0 3px 2px rgb(74, 71, 82);
+}
+nav li:nth-child(2)::before {
+    background-color: rgb(88, 70, 133);
+}
