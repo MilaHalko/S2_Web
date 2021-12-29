@@ -1,85 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Laboratory work #1 by Mila Halko</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,500&display=swap"
       rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic"
     />
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="zeroing.css" />
-    <link rel="stylesheet" href="blocks-composing.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap");
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   </head>
   <body>
-    <header>
-      <div>
-        <q
-          >“Any fool can write code that a computer can understand. Good
-          programmers write code that humans can understand.” – Martin Fowler</q
-        >
-      </div>
-      <div class="top-title"><h1>HTML</h1></div>
-    </header>
-    <div class="center">
-      <div class="center__main-blocks">
-        <div class="main-blocks__top-part">
-          <nav>
-            <ul>
-              <li>HTML main</li>
-              <li><a href="./lab1.2.html">CSS</a></li>
-              <li><a href="./lab1.3.html">Chill Lorem</a></li>
-              <li><a href="./lab1.4.html">Basic</a></li>
-              <li><a href="./lab1.5.html">SEO</a></li>
-            </ul>
-          </nav>
-          <div class="center__central-blocks">
-            <div class="center__top">
-              <p>If you didn't know..</p>
-            </div>
-            <div class="center__main">
-              <p>
-                The <span>HyperText Markup Language</span>, or
-                <span>HTML</span> is the standard markup language for documents
-                designed to be displayed in a web browser. It can be assisted by
-                technologies such as Cascading Style Sheets (CSS) and scripting
-                languages such as JavaScript.
-              </p>
-              <a href="https://en.wikipedia.org/wiki/HTML"
-                >Wanna read more?..</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="center__bottom">
-          <p>..HTML is just a piece of cake</p>
-        </div>
-      </div>
-      <aside class="center__right"></aside>
+    <div class="add_notes" id="add_note">
+      <img src="plus.png" alt="Add notes" />
     </div>
-    <footer>
-      <div>
-        <p>
-          Imagine that you're building a house. One of the first things you
-          would do to build a house is put up a frame. There would be nothing
-          but plain, wooden beams in the rough shape of a house, and you
-          wouldn't be able to live in it yet, but it would give an approximation
-          of what the house would eventually look like. The frame would provide
-          the foundation you need to keep working.
-        </p>
-        <p>
-          You can think of HTML as that frame for a webpage. HTML is a computer
-          language known as a markup language, and the vast majority of the
-          webpages you see on the Internet every day are made of HTML, among
-          other things.
-        </p>
+
+    <div id="myModal" class="modal">
+      <!-- Модальное содержание -->
+      <div class="modal-content">
+        <textarea id="note_textarea" name="text"></textarea>
+        <span class="close">Add Note</span>
       </div>
-      <div class="bottom-title"><h2>meaning</h2></div>
-    </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="back.js"></script>
   </body>
 </html>

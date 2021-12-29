@@ -6,6 +6,7 @@
     "sh-waqar/declaration-use-variable": [
       ["/color/", { "ignoreValues": ["transparent", "inherit", "/rgba/"] }]
     ],
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "selector-max-id": 1
   }
 }
