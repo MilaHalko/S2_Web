@@ -2,7 +2,7 @@ const modal = document.getElementById('myModal');
 const span = document.getElementsByClassName('close')[0];
 
 async function fetchGraphQL(operationsDoc, operationName, variables) {
-  const result = fetch('https://polite-jackal-95.hasura.app/v1/graphql', {
+  const result = await fetch('https://polite-jackal-95.hasura.app/v1/graphql', {
     headers: {
       'content-type': 'application/json',
       'x-hasura-admin-secret':
@@ -61,47 +61,32 @@ function fetchGetNotes() {
 
 async function startExecuteAddNotes(note_text) {
   const { errors, data } = await executeAddNotes(note_text);
-
   if (errors) {
-    // handle those errors like a pro
     console.error(errors);
   }
-
-  // do something great with this precious data
   console.log('CREATED NEW');
   console.log(data);
   return data.notes;
 }
 
-/* startExecuteAddNotes(note_text); */
-
 async function startExecuteDeleteNotes(_eq) {
   const { errors, data } = await executeDeleteNotes(_eq);
-
   if (errors) {
-    // handle those errors like a pro
     console.error(errors);
   }
-
-  // do something great with this precious data
   console.log(data);
 }
 
-/* startExecuteDeleteNotes(_eq); */
-
 async function startFetchGetNotes() {
   const { errors, data } = await fetchGetNotes();
-
   if (errors) {
-    // handle those errors like a pro
     console.error(errors);
   }
+  console.log(data.notes.length);
   for (let index = 0; index < data.notes.length; index + 1) {
     createNote(false, data.notes[index]);
   }
-
-  // do something great with this precious data
-  console.log(data);
+  console.log(data.notes.length);
 }
 
 const AddButton = document.getElementById('add_note');
@@ -151,7 +136,6 @@ function createNote(createNew, curNote) {
       }, 20);
       document.body.insertBefore(newNote, AddButton);
       document.getElementById('note_textarea').value = '';
-
       console.log('Note was added');
     };
   } else {
@@ -178,7 +162,6 @@ function createNote(createNew, curNote) {
     }, 20);
     document.body.insertBefore(newNote, AddButton);
     document.getElementById('note_textarea').value = '';
-
     console.log('Note was added');
   }
 }
