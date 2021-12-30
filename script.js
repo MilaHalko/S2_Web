@@ -83,7 +83,7 @@ async function startFetchGetNotes() {
     console.error(errors);
   }
   console.log(data.notes.length);
-  for (let index = 0; index < data.notes.length; index + 1) {
+  for (let index = 0; index < data.notes.length; index++) {
     createNote(false, data.notes[index]);
   }
   console.log(data.notes.length);
