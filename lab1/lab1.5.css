@@ -1,4 +1,3 @@
-/* BASICS */
 * {
   --orange-color: #fcaf17;
   --lightorange-color: #f0dccf;
@@ -6,6 +5,7 @@
   --blue-color: #1fb8d8;
   --lightgreen-color: #86c752;
   --white-color: #fff;
+  --bg-blue: #1fb8d6;
   font-weight: 500;
 }
 
@@ -14,17 +14,15 @@ footer,
 header {
   background: var(--orange-color);
 }
-.center__top,
-.center__bottom,
 body {
   background: var(--white-color);
 }
 nav,
-.center__right {
+aside {
   background: var(--lightorange-color);
 }
-.top-title,
-.bottom-title {
+header section,
+footer section {
   background: var(--blue-color);
 }
 
@@ -42,21 +40,21 @@ footer p {
   font-size: 20px;
   line-height: 25px;
 }
-p span {
+span {
   font-weight: 700;
   text-decoration: underline;
 }
 
 /*TITLES*/
-.top-title,
-.bottom-title {
+header section,
+footer section {
   border: 5px solid var(--lightgreen-color);
   border-radius: 15px;
   font-size: 25px;
   line-height: 30px;
   width: 200px;
 }
-.bottom-title {
+footer section {
   padding-right: 15px;
 }
 h1,
@@ -65,29 +63,27 @@ h2 {
   text-transform: uppercase;
   width: 100%;
 }
-.top-title h1 {
+h1 {
   text-align: center;
 }
-.bottom-title h2 {
+h2 {
   text-align: right;
 }
 
 /* Center__Main */
-.center__main {
-  background: #1fb8d6 url("./images/SEO_components.jpg") center/contain
+figure {
+  background: var(--bg-blue) url("./images/SEO_components.jpg") center/contain
     no-repeat;
   border-bottom: 5px solid var(--lightgreen-color);
   border-top: 5px solid var(--lightgreen-color);
 }
 
 /* Center sides */
-.center__top,
-.center__bottom {
+main section {
   align-items: center;
   display: flex;
 }
-.center__top p,
-.center__bottom p {
+main p {
   color: var(--lightorange-color);
   font-size: 50px;
   line-height: 55px;
@@ -95,25 +91,21 @@ h2 {
   text-transform: uppercase;
   width: 100%;
 }
-.center__right,
+aside,
 nav {
   border: 5px solid var(--lightgreen-color);
 }
-.center__right {
+aside {
   padding: 20px;
 }
-.center__right h3 {
+aside h3 {
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
   margin: 0 0 20px;
   text-align: center;
 }
-.center__right h3:hover {
-  color: var(--blue-color);
-  font-size: 25px;
-}
-.center__right li {
+aside li {
   background: url("./images/check-icon_light-blue.png") 3px 3px no-repeat;
   font-size: 16px;
   line-height: 30px;

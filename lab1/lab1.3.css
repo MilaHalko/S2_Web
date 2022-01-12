@@ -22,18 +22,16 @@ header,
 footer {
   background: var(--darkgrey-color);
 }
-.center__top,
-.center__bottom,
 body {
   background: var(--black-color);
 }
 nav,
-.center__right {
+aside {
   background: var(--white-color);
 }
-.center__main,
-.top-title,
-.bottom-title {
+article,
+header section,
+footer section {
   background: var(--lightgrey-color);
 }
 
@@ -55,88 +53,81 @@ footer p {
 }
 
 /*TITLES*/
-.top-title h1,
-.bottom-title h2 {
+h1,
+h2 {
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
   text-transform: uppercase;
   width: 100%;
 }
-.top-title h1 {
+h1 {
   text-align: center;
 }
-.bottom-title h2 {
+h2 {
   padding-right: 15px;
   text-align: right;
 }
-.top-title,
-.bottom-title,
-.center__main {
+header section,
+footer section,
+article {
   border: 5px solid var(--white-color);
   border-radius: 15px;
   box-shadow: 0 0 8px var(--white-color);
 }
-.top-title:hover,
-.bottom-title:hover,
-.center__main:hover {
-  box-shadow: 0 0 20px var(--white-color);
-}
 
 /* Center__Main */
-.center__main {
+article {
   margin: 0 15px;
   padding: 20px;
 }
-.center__main p {
+article p {
   font-size: 20px;
   line-height: 30px;
   text-align: center;
 }
 .center__main:hover {
-  background: var(--orange-color); /* Old browsers */
+  background: var(--orange-color);
   background: linear-gradient(
     top,
     var(--orange-color) 0%,
     var(--green-color) 50%,
     var(--lightblue-color) 100%
-  ); /* FF3.6-15 */
+  );
   background: linear-gradient(
     top,
     var(--orange-color) 0%,
     var(--green-color) 50%,
     var(--lightblue-color) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+  );
   background: linear-gradient(
     to bottom,
     var(--orange-color) 0%,
     var(--green-color) 50%,
     var(--lightblue-color) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--orange-color)', endColorstr='var(--lightblue-color)',GradientType=0 ); /* IE6-9 */
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--orange-color)', endColorstr='var(--lightblue-color)',GradientType=0 );
 }
 
 /* Center sides */
-.center__top,
-.center__bottom {
+main section {
   display: flex;
   justify-content: center;
 }
-.center__top p,
-.center__bottom p {
+section p {
   color: var(--white-color);
   display: flex;
   font-size: 25px;
-  line-height: 30px;
+  line-height: 60px;
   opacity: 0.5;
   text-align: center;
   text-transform: capitalize;
 }
-.center__right {
+aside {
   border-radius: 20px;
   margin: 0 0 20px;
 }
-.center__right a {
+aside a {
   color: var(--red-color);
   display: block;
   font-size: 30px;
@@ -145,43 +136,16 @@ footer p {
   padding: 20px 0 0;
   text-align: center;
 }
-.center__right h2:hover {
+aside h2:hover {
   text-decoration: underline;
 }
-.center__right ul {
+aside ul {
   margin: 30px;
   text-align: right;
 }
 .center__right li {
   font-style: italic;
   line-height: 25px;
-}
-.center__right li:nth-child(2) {
-  padding-right: 10%;
-}
-.center__right li:nth-child(3) {
-  padding-right: 20%;
-}
-.center__right li:nth-child(4) {
-  padding-right: 30%;
-}
-.center__right li:nth-child(5) {
-  padding-right: 40%;
-}
-.center__right li:nth-child(6) {
-  padding-right: 50%;
-}
-.center__right li:nth-child(7) {
-  padding-right: 60%;
-}
-.center__right li:nth-child(8) {
-  padding-right: 70%;
-}
-.center__right li:nth-child(9) {
-  padding-right: 80%;
-}
-.center__right li:nth-child(10) {
-  padding-right: 90%;
 }
 nav {
   border-radius: 20px;

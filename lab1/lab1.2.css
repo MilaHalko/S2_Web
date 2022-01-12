@@ -5,6 +5,9 @@
   --greyviolet-color: #584685;
   --darkblue-color: #26007e;
   --greydarkblue-color: #1b2c63;
+  --bg-blue: #0a93d3;
+  --bg-dark-blue: #0f489c;
+  --bg-grey: #d4d4d4;
   color: var(--darkblue-color);
   font-family: "Izax";
   font-size: 15px;
@@ -15,44 +18,37 @@
 /* SAME COLORS */
 header,
 footer {
-  background: #0f489c;
+  background: var(--bg-dark-blue);
 }
-.center__top,
-.center__bottom,
 body {
-  background: #0a93d3;
+  background: var(--bg-blue);
 }
 nav,
-.center__right {
-  background: #d4d4d4;
+aside {
+  background: var(--bg-grey);
 }
-.center__main,
-.top-title,
-.bottom-title {
-  background: #f3f3f3;
+figure,
+header section,
+footer section {
+  background: var(--white-color);
 }
 
 /* HEADER_FOOTER */
-
 header {
   border-bottom: 3px solid var(--darkblue-color);
   box-shadow: 0 5px 15px var(--greydarkblue-color);
   z-index: 3;
 }
-header div > .top-title {
-  margin: 0 0 0 30px;
-}
-.h2 {
+header div {
   width: 300px;
 }
-.h2,
-aside h2 {
+header div,
+aside h3 {
   border: 10px double var(--darkblue-color);
   margin: 15px;
   padding: 10px;
 }
-header h2,
-aside h2 {
+h3 {
   color: var(--white-color);
   font-size: 40px;
   line-height: 40px;
@@ -78,29 +74,29 @@ footer {
 }
 
 /*TITLES*/
-.top-title,
-.bottom-title {
+header section,
+footer section {
   border: 5px solid var(--darkblue-color);
   border-radius: 15px;
   box-shadow: 0 5px 10px var(--greydarkblue-color);
   padding: 5px;
 }
-.top-title h1,
-.bottom-title h2 {
+h1,
+h2 {
   align-self: center;
   font-size: 30px;
   width: 100%;
 }
-.top-title h1 {
+h1 {
   text-align: center;
 }
-.bottom-title h2 {
+h2 {
   padding-right: 5px;
   text-align: right;
 }
 
 /* Center__Main */
-.center__main {
+figure {
   align-items: center;
   border: 5px solid var(--darkblue-color);
   border-radius: 5px;
@@ -110,25 +106,23 @@ footer {
 }
 
 /* Center sides */
-.center__top,
-.center__bottom {
+main section {
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 10px;
 }
-.center__top p,
-.center__bottom p {
+main p {
   color: var(--white-color);
   font-size: 40px;
   line-height: 45px;
   opacity: 0.5;
   text-transform: uppercase;
 }
-.center__right ol {
+ol {
   margin: 10px 40px;
 }
-.center__right li {
+ol li {
   font-size: 20px;
   padding: 0 0 5px;
 }

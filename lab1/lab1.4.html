@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratory work #1 by Mila Halko</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -8,9 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="fonts.css" />
-    <link rel="stylesheet" href="zeroing.css" />
-    <link rel="stylesheet" href="blocks-composing.css" />
+    <link rel="stylesheet" href="zeroing_blocksComposing.css" />
     <link rel="stylesheet" href="lab1.4.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap");
@@ -22,10 +22,10 @@
         Pseudo-classes are used in CSS selectors to permit formatting based on
         information that is not contained in the document tree.
       </p>
-      <div class="top-title"><h1>Laboratory</h1></div>
+      <section><h1>Laboratory</h1></section>
     </header>
-    <div class="center">
-      <div class="center__main-blocks">
+    <main>
+      <div class="main-blocks">
         <div class="main-blocks__top-part">
           <nav>
             <ul>
@@ -36,11 +36,11 @@
               <li><a href="./lab1.5.html">SEO</a></li>
             </ul>
           </nav>
-          <div class="center__central-blocks">
-            <div class="center__top">
+          <div class="central-blocks">
+            <section class="first">
               <p>CSS information can be provided from various sources.</p>
-            </div>
-            <div class="center__main">
+            </section>
+            <article>
               <p>
                 Selectors may be combined in many ways to achieve great
                 specificity and flexibility. Multiple selectors may be joined in
@@ -53,17 +53,17 @@
                 confused with concatenated identifiers such as div.myClass
                 {color: red;} which applies to div elements of class myClass.
               </p>
-            </div>
+            </article>
           </div>
         </div>
-        <div class="center__bottom">
+        <section class="second">
           <p>
             Using CSS, the same element can be coded using style properties
             instead of HTML presentational attributes
           </p>
-        </div>
+        </section>
       </div>
-      <aside class="center__right">
+      <aside>
         <p>
           The style sheet with the highest priority controls the content
           display. Declarations not set in the highest priority source are
@@ -71,7 +71,7 @@
           The process is called cascading.
         </p>
       </aside>
-    </div>
+    </main>
     <footer>
       <p>
         Selectors may be combined in many ways to achieve great specificity and
@@ -85,7 +85,7 @@
         div.myClass {color: red;} which applies to div elements of class
         myClass.
       </p>
-      <div class="bottom-title"><h2>Selector</h2></div>
+      <section><h2>Selector</h2></section>
     </footer>
   </body>
 </html>

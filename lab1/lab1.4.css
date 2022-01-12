@@ -1,4 +1,3 @@
-/* BASICS */
 * {
   --white-color: #fff;
   --black-color: #000;
@@ -7,38 +6,35 @@
   --lightblue-color: #c3dbf3;
   --richblue-color: #2e97ff;
   --lightgreen-color: #eaf1dd;
-  font-weight: 500;
+  font-weight: 400;
 }
 /* SAME COLORS */
 header,
 footer {
   background: var(--lightblue-color);
 }
-.center__top,
-.center__bottom,
 body {
   background: var(--white-color);
 }
 nav,
-.center__right {
+aside {
   background: var(--lightorange-color);
 }
-.center__main,
-.top-title,
-.bottom-title {
+article,
+header section,
+footer section {
   background: var(--lightgreen-color);
 }
-.top-title,
-.bottom-title,
-.center,
-.center__main {
+header section,
+footer section,
+main,
+article {
   border: 1px solid var(--black-color);
 }
-.center__top {
+.first {
   border-left: 1px solid var(--black-color);
 }
-.center__bottom,
-.center__top {
+main section {
   border-right: 1px solid var(--black-color);
 }
 nav {
@@ -60,59 +56,57 @@ footer p {
 }
 
 /*TITLES*/
-.top-title,
-.bottom-title {
+header section,
+footer section {
   align-items: center;
   align-self: center;
   display: flex;
   font-size: 20px;
 }
-.top-title h1,
-.bottom-title h2 {
+h1,
+h2 {
   line-height: 30px;
 }
-.top-title h1 {
+h1 {
   text-align: center;
   width: 100%;
 }
-.bottom-title h2 {
+h2 {
   padding-right: 15px;
   text-align: right;
   width: 100%;
 }
 
 /* Center__Main */
-.center__main {
+article {
   overflow: auto;
   padding: 15px;
 }
-.center__main p {
+article p {
   font-size: 20px;
   line-height: 25px;
   text-align: center;
 }
 
 /* Center sides */
-.center__top,
-.center__bottom {
+main section {
   align-items: center;
   display: flex;
   padding: 5px;
 }
-.center__top p,
-.center__bottom p {
+section p {
   line-height: 20px;
   text-align: center;
   width: 100%;
 }
-.center__right {
+aside {
   padding: 20px;
 }
-.center__right p {
+aside p {
   font-style: italic;
   line-height: 20px;
 }
-.center__right p::first-letter {
+aside p::first-letter {
   font-size: 25px;
 }
 nav {
