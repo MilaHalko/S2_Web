@@ -9,8 +9,17 @@
     "plugin:@nodeart/react"
   ],
   "parserOptions": {
-    "ecmaVersion": 13
+    "ecmaVersion": "latest"
   },
-  "rules": {},
+  "rules": {
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "ignore",
+        "named": "ignore",
+        "asyncArrow": "ignore"
+      }
+    ]
+  },
   "plugins": ["sonarjs", "@nodeart"]
 }
