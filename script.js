@@ -1,12 +1,15 @@
+import './style.css';
+
 const modal = document.getElementById('myModal');
+const modalError = document.getElementById('myModalError');
+const errP = document.getElementById('errMessage');
 const span = document.getElementsByClassName('close')[0];
 
 async function fetchGraphQL(operationsDoc, operationName, variables) {
-  const result = await fetch('https://polite-jackal-95.hasura.app/v1/graphql', {
+  const result = await fetch(process.env.VITE_HASURA_SITE, {
     headers: {
       'content-type': 'application/json',
-      'x-hasura-admin-secret':
-        'snBYRU9GUPQHFzuKQedvLi2l3UGG5X4C4s6uDA4DrHG8KGALtKS8PS8BvaPjilGl',
+      'x-hasura-admin-secret': process.env.VITE_HASURA_KEY,
     },
     method: 'POST',
     body: JSON.stringify({
@@ -63,6 +66,12 @@ async function startExecuteAddNotes(note_text) {
   const { errors, data } = await executeAddNotes(note_text);
   if (errors) {
     console.error(errors);
+    errP.innerHTML = 'Ошибка создания заметки!';
+    modalError.style.display = 'block';
+
+    span.onclick = function () {
+      modalError.style.display = 'none';
+    };
   }
   console.log('CREATED NEW');
   console.log(data);
@@ -73,6 +82,12 @@ async function startExecuteDeleteNotes(_eq) {
   const { errors, data } = await executeDeleteNotes(_eq);
   if (errors) {
     console.error(errors);
+    errP.innerHTML = 'Ошибка создания заметки!';
+    modalError.style.display = 'block';
+
+    span.onclick = function () {
+      modalError.style.display = 'none';
+    };
   }
   console.log(data);
 }
@@ -81,6 +96,12 @@ async function startFetchGetNotes() {
   const { errors, data } = await fetchGetNotes();
   if (errors) {
     console.error(errors);
+    errP.innerHTML = 'Ошибка создания заметки!';
+    modalError.style.display = 'block';
+
+    span.onclick = function () {
+      modalError.style.display = 'none';
+    };
   }
   console.log(data.notes.length);
   for (let index = 0; index < data.notes.length; index++) {
@@ -126,8 +147,8 @@ function createNote(createNew, curNote) {
       buttDelete.classList.add('delete_notes');
       newNote.appendChild(buttDelete);
 
-      const imgDelete = document.createElement('img');
-      imgDelete.src = 'delete.png';
+      const imgDelete = document.createElement('span');
+      imgDelete.innerHTML = 'x';
       imgDelete.addEventListener('click', deleteNotes);
       buttDelete.appendChild(imgDelete);
 
@@ -152,8 +173,8 @@ function createNote(createNew, curNote) {
     buttDelete.classList.add('delete_notes');
     newNote.appendChild(buttDelete);
 
-    const imgDelete = document.createElement('img');
-    imgDelete.src = 'delete.png';
+    const imgDelete = document.createElement('span');
+    imgDelete.innerHTML = 'x';
     imgDelete.addEventListener('click', deleteNotes);
     buttDelete.appendChild(imgDelete);
 

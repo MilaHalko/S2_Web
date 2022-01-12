@@ -151,6 +151,9 @@ body {
   height: 90%;
   width: 90%;
 }
+.plusPic {
+  background-image: url(./plus.png);
+}
 
 @media (max-width: 380px) {
   .notes {

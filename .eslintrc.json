@@ -12,7 +12,6 @@
     "ecmaVersion": "latest"
   },
   "rules": {
-    "no-plusplus": "off",
     "space-before-function-paren": [
       "error",
       {
