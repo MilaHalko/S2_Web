@@ -56,13 +56,13 @@ nav {
   padding: 0;
 }
 
-.links .link {
+.links li {
   color: var(--bright-text-color);
   min-width: 5rem;
   text-align: center;
 }
 
-.links .link a {
+.links li a {
   color: inherit;
   display: inline-block;
   height: 100%;
@@ -71,7 +71,7 @@ nav {
   width: 100%;
 }
 
-.links .link:hover {
+.links li:hover {
   background-color: var(--bright-text-color);
   color: var(--dark-background-color);
 }
