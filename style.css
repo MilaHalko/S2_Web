@@ -134,19 +134,21 @@ body {
     width: 80%;
 }
 
-.close {
+span {
     color: var(--lightgrey-color);
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+span:hover,
+span:focus {
     color: var(--black-color);
     cursor: pointer;
     text-decoration: none;
 }
+
+
 #note_textarea {
     height: 90%;
     width: 90%;

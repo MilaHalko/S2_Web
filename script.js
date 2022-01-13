@@ -4,6 +4,7 @@ const modal = document.getElementById('myModal');
 const modalError = document.getElementById('myModalError');
 const errP = document.getElementById('errMessage');
 const span = document.getElementsByClassName('close')[0];
+const spanAdd = document.getElementsByClassName('AddButt')[0];
 const errorMsg = 'Ошибка создания заметки!';
 
 async function fetchGraphQL(operationsDoc, operationName, variables) {
@@ -18,15 +19,15 @@ async function fetchGraphQL(operationsDoc, operationName, variables) {
             variables,
             operationName,
         }),
-    }).catch(() => {
-        errP.innerHTML =
-            'Ошибка отправления сообщения, отсутствует соединение с интернетом!';
-        modal.style.display = 'block';
-
-        span.onclick = function () {
-            modal.style.display = 'none';
-        };
-    });
+    }).catch(()=>{
+        errP.innerHTML = "Ошибка отправления сообщения, отсутствует соединение с интернетом!";
+        modalError.style.display = "block";
+      
+        span.onclick = function() {
+            modalError.style.display = "none";
+        } 
+         
+    })
 
     return result.json();
 }
@@ -83,8 +84,8 @@ async function startExecuteAddNotes(note_text) {
         };
     }
     console.log('CREATED NEW');
-    console.log(data);
-    return data.notes;
+    console.log(data.insert_notes.returning[0]);
+    return data.insert_notes.returning[0];
 }
 
 async function startExecuteDeleteNotes(_eq) {
@@ -102,21 +103,31 @@ async function startExecuteDeleteNotes(_eq) {
 }
 
 async function startFetchGetNotes() {
-    const { errors, data } = await fetchGetNotes();
-    if (errors) {
-        console.error(errors);
-        errP.innerHTML = errorMsg;
-        modalError.style.display = 'block';
+    fetchGetNotes().then(( data, errors )=>{
+        if (errors) {
+            console.error(errors);
+            errP.innerHTML = errorMsg;
+            modalError.style.display = 'block';
 
-        span.onclick = function () {
-            modalError.style.display = 'none';
-        };
-    }
-    console.log(data.notes.length);
-    for (let index = 0; index < data.notes.length; index++) {
-        createNote(false, data.notes[index]);
-    }
-    console.log(data.notes.length);
+            span.onclick = function () {
+                modalError.style.display = 'none';
+            };
+        }
+        console.log(data.data.notes.length);
+        for (let index = 0; index < data.data.notes.length; index++) {
+            createNote(false, data.data.notes[index]);
+        }
+    }).catch(ErrorHandler);
+}
+
+function ErrorHandler(error){
+    errP.innerHTML = error;
+    modalError.style.display = 'block';
+
+    span.onclick = function () {
+        modalError.style.display = 'none';
+    };
+
 }
 
 const AddButton = document.getElementsByClassName('add_notes')[0];
@@ -126,12 +137,13 @@ AddButton.addEventListener('click', () => {
 
 function deleteNotes(event) {
     console.log(event.target.parentElement.parentElement.id);
-    event.target.parentElement.parentElement.classList.add('animate');
+    
 
-    document
-        .getElementById(event.target.parentElement.parentElement.id)
-        .remove();
-    startExecuteDeleteNotes(event.target.parentElement.parentElement.id);
+   
+    startExecuteDeleteNotes(event.target.parentElement.parentElement.id).then(()=>{
+        event.target.parentElement.parentElement.classList.add('animate');
+        document.getElementById(event.target.parentElement.parentElement.id).remove();
+    }).catch(ErrorHandler);
     console.log('Note was deleted');
 }
 
@@ -141,34 +153,36 @@ function createNote(createNew, curNote) {
     if (createNew) {
         modal.style.display = 'block';
 
-        span.onclick = function () {
+        spanAdd.onclick = function () {
             modal.style.display = 'none';
             const textArrVal = document.getElementById('note_textarea').value;
-            const newNoteData = startExecuteAddNotes(textArrVal);
-            const newNote = document.createElement('div');
-            newNote.id = newNoteData.note_id;
-            const textAre = document.createElement('div');
-            textAre.classList.add('note_info');
-            textAre.innerHTML = document.getElementById('note_textarea').value;
-            newNote.appendChild(textAre);
+            startExecuteAddNotes(textArrVal).then((newNoteData)=>{
+                console.log(newNoteData);
+                const newNote = document.createElement('div');
+                newNote.id = newNoteData.note_id;
+                const textAre = document.createElement('div');
+                textAre.classList.add('note_info');
+                textAre.innerHTML = document.getElementById('note_textarea').value;
+                newNote.appendChild(textAre);
 
-            newNote.classList.add('notes');
-            newNote.classList.add('animate');
-            const buttDelete = document.createElement('div');
-            buttDelete.classList.add('delete_notes');
-            newNote.appendChild(buttDelete);
+                newNote.classList.add('notes');
+                newNote.classList.add('animate');
+                const buttDelete = document.createElement('div');
+                buttDelete.classList.add('delete_notes');
+                newNote.appendChild(buttDelete);
 
-            const imgDelete = document.createElement('span');
-            imgDelete.innerHTML = 'x';
-            imgDelete.addEventListener('click', deleteNotes);
-            buttDelete.appendChild(imgDelete);
+                const imgDelete = document.createElement('span');
+                imgDelete.innerHTML = 'x';
+                imgDelete.addEventListener('click', deleteNotes);
+                buttDelete.appendChild(imgDelete);
 
-            setTimeout(() => {
-                newNote.classList.remove('animate');
-            }, 20);
-            document.body.insertBefore(newNote, AddButton);
-            document.getElementById('note_textarea').value = '';
-            console.log('Note was added');
+                setTimeout(() => {
+                    newNote.classList.remove('animate');
+                }, 20);
+                document.body.insertBefore(newNote, AddButton);
+                document.getElementById('note_textarea').value = '';
+                console.log('Note was added');
+            }).catch(ErrorHandler)
         };
     } else {
         const newNote = document.createElement('div');
