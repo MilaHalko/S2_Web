@@ -15,6 +15,10 @@
     "rules": {
         "sonarjs/cognitive-complexity": ["error", 15],
         "indent": ["error", 4],
-        "operator-linebreak": [2, "before"]
+        "operator-linebreak": [
+            2,
+            "after",
+            { "overrides": { "?": "ignore", ":": "ignore" } }
+        ]
     }
 }
