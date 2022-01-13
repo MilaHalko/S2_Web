@@ -18,6 +18,14 @@ async function fetchGraphQL(operationsDoc, operationName, variables) {
             variables,
             operationName,
         }),
+    }).catch(() => {
+        errP.innerHTML =
+            'Ошибка отправления сообщения, отсутствует соединение с интернетом!';
+        modal.style.display = 'block';
+
+        span.onclick = function () {
+            modal.style.display = 'none';
+        };
     });
 
     return result.json();
@@ -111,7 +119,7 @@ async function startFetchGetNotes() {
     console.log(data.notes.length);
 }
 
-const AddButton = document.getElementById('add_note');
+const AddButton = document.getElementsByClassName('add_notes')[0];
 AddButton.addEventListener('click', () => {
     createNote(true, parseInt(1, 10));
 });
