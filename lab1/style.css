@@ -1,4 +1,3 @@
-/* BASICS */
 * {
   --white-color: #fff;
   --light-blue-color: #98d3e2;
@@ -11,27 +10,95 @@
   --bg-blue-color: #2498a0;
   --bg-light-yellow-color: #fff0d3;
   --shadow-dark-blue-color: #084347;
+  --orange-color: #ff9932;
+  --green-color: #30ff3e;
+  --lightblue-color: #89c8ff;
+  border: 0;
   font-family: "Playfair Display";
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
 }
 
+/* Blocks composing */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 100px;
+  width: 100vw;
+}
+header,
+footer,
+nav {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+header section,
+footer section {
+  margin: 20px;
+  width: 200px;
+}
+h1,
+h2 {
+  width: 100%;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: right;
+}
+
+main {
+  display: flex;
+  flex: 2;
+  font-display: row;
+}
+.main-blocks,
+.central-blocks {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+}
+.main-blocks__top-part {
+  display: flex;
+  flex: 5;
+}
+main article,
+main figure {
+  flex: 5;
+}
+main section,
+aside {
+  flex: 1;
+}
+figure {
+  display: flex;
+  justify-content: center;
+}
+
+/* COLORS */
 header,
 footer {
   background: var(--bg-blue-color);
 }
-
 main section,
 body {
   background: var(--light-blue-color);
 }
-
 nav,
 aside {
   background: var(--bg-light-yellow-color);
 }
-
 main article,
 header section,
 footer section {
@@ -43,7 +110,6 @@ header,
 footer {
   justify-content: space-between;
 }
-
 header div,
 footer article {
   align-items: center;
@@ -55,7 +121,6 @@ q {
   quotes: "\00AB""\00BB""\201E""\201C";
   text-align: center;
 }
-
 q,
 footer p {
   color: var(--light-blue-color);
@@ -70,7 +135,6 @@ footer section {
   box-shadow: -8px 0 8px var(--shadow-dark-blue-color);
   padding: 5px;
 }
-
 h1,
 h2 {
   font-size: 30px;
@@ -84,17 +148,15 @@ main article {
   padding: 30px 30px 60px;
   position: relative;
 }
-
 main article p::first-letter {
   font-size: 30px;
   padding-left: 15px;
 }
-
 span {
   color: var(--red-color);
 }
 
-main article a {
+article a {
   bottom: 30px;
   color: var(--blue-color);
   font-style: italic;
@@ -105,8 +167,7 @@ main article a {
   text-transform: lowercase;
   width: 100%;
 }
-
-main article a:hover {
+article a:hover {
   color: var(--rich-blue-hover-color);
 }
 
@@ -116,7 +177,6 @@ main section {
   display: flex;
   justify-content: center;
 }
-
 main section p {
   color: var(--blue-color);
   font-size: 40px;
@@ -125,28 +185,20 @@ main section p {
   text-transform: uppercase;
 }
 
-aside {
-  background: var(--dark-blue-color) url("./images/girl.jpeg") 30% 50% no-repeat;
-}
-
 nav {
   border-radius: 20px;
 }
-
 nav li {
   color: var(--light-red-color);
   height: 50px;
   padding: 0 0 0 15px;
 }
-
 nav li a {
   color: var(--red-color);
 }
-
-nav li a:hover {
+nav a:hover {
   font-size: 20px;
 }
-
 nav li::before {
   background-color: var(--red-color);
   border-radius: 50%;
@@ -157,7 +209,48 @@ nav li::before {
   margin: 0 10px 0 0;
   width: 10px;
 }
-
-nav li:nth-child(1)::before {
+.selected::before {
   background-color: var(--light-red-color);
+}
+
+.girl {
+  background: var(--dark-blue-color) url("./images/girl.jpeg") 30% 50% no-repeat;
+}
+.code {
+  background: var(--dark-blue-color) url("./images/css_back.jpg") 10% 65%
+    no-repeat;
+  background-size: auto 100%;
+}
+.forrest {
+  background: var(--dark-blue-color) url("./images/b&w_forest.jpg") 10% 65%
+    no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+.zalik {
+  background: var(--dark-blue-color) url("./images/zalik.jpg") no-repeat;
+  background-position: right;
+  background-size: auto 100%;
+}
+.gradient {
+  background: var(--orange-color);
+  background: linear-gradient(
+    top,
+    var(--orange-color) 0%,
+    var(--green-color) 50%,
+    var(--lightblue-color) 100%
+  );
+  background: linear-gradient(
+    top,
+    var(--orange-color) 0%,
+    var(--green-color) 50%,
+    var(--lightblue-color) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--orange-color) 0%,
+    var(--green-color) 50%,
+    var(--lightblue-color) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--orange-color)', endColorstr='var(--lightblue-color)',GradientType=0 );
 }
