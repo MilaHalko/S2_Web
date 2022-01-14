@@ -1,5 +1,5 @@
-name: Format checking
-on: [pull_request]
+name: Format check
+on: [push, pull_request]
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16"
           cache: "npm"
-      - run: npm ci && npm run stylelint && npm run lint && npm run format
+      - run: npm ci && npm run format && npm run lint && npm run stylelint
