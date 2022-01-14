@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milka Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <input
+        id="burger-button"
+        class="burger-button"
+        type="checkbox"
+        name="burger-button"
+      />
+      <label class="burger" for="burger-button">
+        <span></span>
+        <span></span>
+      </label>
+      <label class="backdrop" for="burger-button"></label>
+      <nav>
+        <ul class="links">
+          <li><a href="https://www.google.com/">Google</a></li>
+          <li><a href="https://www.youtube.com/">Youtube</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="slider-cta">Milka</h1>
+      <div class="slider-outer">
+        <input
+          name="slide-picker"
+          id="slide1"
+          class="slide1"
+          type="radio"
+          checked
+        />
+        <input name="slide-picker" id="slide2" class="slide2" type="radio" />
+        <input name="slide-picker" id="slide3" class="slide3" type="radio" />
+        <div class="slider-button slider-button-left">
+          <label
+            class="slider-button-label slider-button-label-left"
+            for="slide1"
+          >
+            &#60;
+          </label>
+          <label
+            class="slider-button-label slider-button-label-left"
+            for="slide2"
+          >
+            &#60;
+          </label>
+          <label
+            class="slider-button-label slider-button-label-left"
+            for="slide3"
+          >
+            &#60;
+          </label>
+        </div>
+        <div class="slider-button slider-button-right">
+          <label
+            class="slider-button-label slider-button-label-right"
+            for="slide1"
+          >
+            &#62;
+          </label>
+          <label
+            class="slider-button-label slider-button-label-right"
+            for="slide2"
+          >
+            &#62;
+          </label>
+          <label
+            class="slider-button-label slider-button-label-right"
+            for="slide3"
+          >
+            &#62;
+          </label>
+        </div>
+        <div class="slider-visible">
+          <div class="slider">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+          </div>
+        </div>
+        <div class="label-dots-container">
+          <label class="label-dot" for="slide1"></label>
+          <label class="label-dot" for="slide2"></label>
+          <label class="label-dot" for="slide3"></label>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

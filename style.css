@@ -1,0 +1,343 @@
+* {
+  --slider-button-color: #ffc0cb;
+  --bright-background-color: #ffcbcb;
+  --dark-background-color: #7c0e20;
+  --bright-text-color: #e6e6e6;
+  --dark-text-color: #f50b65;
+  --backdrop-bg-color: #31313185;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bright-background-color);
+  color: var(--dark-text-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  align-items: center;
+  background-color: var(--dark-background-color);
+  display: flex;
+  height: 3rem;
+  justify-content: right;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: row-reverse;
+  }
+}
+
+nav {
+  background-color: var(--dark-background-color);
+  bottom: 0;
+  display: block;
+  padding-top: 4rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: 0.3s;
+  width: 20rem;
+  z-index: 3;
+}
+
+.links {
+  display: none;
+  height: 100%;
+  justify-content: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links li {
+  color: var(--bright-text-color);
+  min-width: 5rem;
+  text-align: center;
+}
+
+.links li a {
+  color: inherit;
+  display: inline-block;
+  height: 100%;
+  line-height: 3rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.links li:hover {
+  background-color: var(--bright-text-color);
+  color: var(--dark-background-color);
+}
+
+.swipe-cta {
+  display: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.swipe-cta span {
+  font-size: 2rem;
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  height: 1rem;
+  margin: 0.5rem;
+  position: relative;
+  width: 3rem;
+  z-index: 4;
+}
+
+.burger span {
+  background-color: var(--bright-background-color);
+  display: inline-block;
+  height: 3px;
+  position: absolute;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0;
+  transform-origin: left;
+}
+
+.burger span:nth-of-type(2) {
+  bottom: 0;
+  transform-origin: left;
+}
+
+.burger-button {
+  display: none;
+}
+
+.backdrop {
+  background-color: var(--backdrop-bg-color);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.burger-button:checked ~ .burger {
+  position: fixed;
+  right: 0;
+}
+
+.burger-button:checked ~ .backdrop {
+  display: block;
+}
+
+.burger-button:checked ~ nav {
+  transform: translateX(0);
+}
+
+.burger-button:checked ~ nav .links {
+  display: block;
+  flex-direction: column;
+}
+
+.burger-button:checked ~ .burger span:nth-of-type(1) {
+  transform: rotateZ(15deg) scaleX(1.03);
+}
+
+.burger-button:checked ~ .burger span:nth-of-type(2) {
+  transform: rotateZ(-15deg) scaleX(1.03);
+}
+
+.slider-cta {
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.slider-outer {
+  margin: 0 15rem;
+  position: relative;
+}
+
+.slider-outer .slider-button {
+  bottom: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  position: absolute;
+  top: 0;
+  transition: 0.1s;
+  user-select: none;
+  width: 2.5rem;
+  z-index: 0;
+}
+
+.slider-outer .slider-button .slider-button-label {
+  background-color: var(--slider-button-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 2.5rem;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  z-index: -1;
+}
+
+.slider-outer .slider-button-left {
+  left: 0.5rem;
+  z-index: 1;
+}
+
+.slider-outer .slider-button-right {
+  right: 0.5rem;
+  z-index: 1;
+}
+
+.slider-outer [type='radio'] {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .slider-outer {
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .slider-outer {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .slider-outer {
+    margin: 0;
+  }
+}
+
+.label-dots-container {
+  height: 2rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.label-dots-container .label-dot {
+  background-color: var(--bright-background-color);
+  border: 1px solid var(--dark-background-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 1rem;
+  margin-right: 1rem;
+  width: 1rem;
+}
+
+.label-dots-container .label-dot:last-of-type {
+  margin: 0;
+}
+
+.slider {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 1s;
+  width: 300%;
+}
+
+.slide1:checked ~ .slider-visible .slider {
+  transform: translateX(0);
+}
+
+.slide1:checked ~ .label-dots-container .label-dot[for='slide1'] {
+  background-color: var(--dark-background-color);
+}
+
+.slide1:checked ~ .slider-button-left .slider-button-label-left[for='slide3'] {
+  z-index: 1;
+}
+
+.slide1:checked
+  ~ .slider-button-right
+  .slider-button-label-right[for='slide2'] {
+  z-index: 1;
+}
+
+.slide2:checked ~ .slider-visible .slider {
+  transform: translateX(-33.333%);
+}
+
+.slide2:checked ~ .label-dots-container .label-dot[for='slide2'] {
+  background-color: var(--dark-background-color);
+}
+
+.slide2:checked ~ .slider-button-left .slider-button-label-left[for='slide1'] {
+  z-index: 1;
+}
+
+.slide2:checked
+  ~ .slider-button-right
+  .slider-button-label-right[for='slide3'] {
+  z-index: 1;
+}
+
+.slide3:checked ~ .slider-visible .slider {
+  transform: translateX(-66.6667%);
+}
+
+.slide3:checked ~ .label-dots-container .label-dot[for='slide3'] {
+  background-color: var(--dark-background-color);
+}
+
+.slide3:checked ~ .slider-button-left .slider-button-label-left[for='slide2'] {
+  z-index: 1;
+}
+
+.slide3:checked
+  ~ .slider-button-right
+  .slider-button-label-right[for='slide1'] {
+  z-index: 1;
+}
+
+.slider-visible {
+  height: 40rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.slider .slide {
+  background-position: center;
+  background-size: cover;
+  flex: 1 1;
+  height: 100%;
+}
+
+.slider .slide:nth-of-type(1) {
+  background-image: url('./assets/first.jpg');
+}
+
+.slider .slide:nth-of-type(2) {
+  background-image: url('./assets/second.jpg');
+}
+
+.slider .slide:nth-of-type(3) {
+  background-image: url('./assets/third.jpg');
+}
